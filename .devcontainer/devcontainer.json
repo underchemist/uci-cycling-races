@@ -1,0 +1,7 @@
+{
+    "build": {
+        "dockerfile": "${localWorkspaceFolder}/docker/Dockerfile",
+        "target": "dev-builder",
+        "options": ["-t", "stactools-package/uci-cycling-races:devcontainer"]
+    }
+}

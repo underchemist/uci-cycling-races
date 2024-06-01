@@ -1,32 +1,23 @@
-FROM continuumio/miniconda3 as base
+FROM python:3.12.3-slim-bullseye as dependencies
 
-COPY environment.yml ./
-RUN conda update conda && \
-    conda env update -f environment.yml -n base && \
-    conda clean -af
-
-
-FROM base as dependencies
 
 ENV PATH="/opt/venv/bin:$PATH"
 WORKDIR /opt/stactools-uci-cycling-races
-COPY --from=base /opt/conda /opt/conda
 COPY pyproject.toml ./
 COPY src/stactools/uci_cycling_races/__init__.py src/stactools/uci_cycling_races/
 RUN apt-get -y -q update \
     && apt-get -y -q install build-essential \
-    && rm -rf /var/lib/apt/lists/
-RUN python -m venv /opt/venv
-RUN pip install . \
+    && rm -rf /var/lib/apt/lists/ && \
+    python -m venv /opt/venv && \
+    pip install . &&\
     && ls /opt/venv \
-    && rm -r /opt/venv/lib/python3.11/site-packages/stactools/uci_cycling_races
+    && rm -r /opt/venv/lib/python3.12/site-packages/stactools/uci_cycling_races
 
 
 FROM dependencies as builder
 
 ENV PATH="/opt/venv/bin:$PATH"
 WORKDIR /opt/stactools-uci-cycling-races
-COPY --from=base /opt/conda /opt/conda
 COPY --from=dependencies /opt/venv /opt/venv
 COPY pyproject.toml ./
 COPY src ./src
@@ -39,6 +30,9 @@ CMD [ "stac", "ucicyclingraces" ]
 
 FROM dependencies as dev-dependencies
 
+RUN apt-get update -q && \
+    apt-get install -y -q --no-install-recommends git && \
+    rm -rf /var/lib/apt/lists/
 ENV PATH="/opt/venv/bin:$PATH"
 WORKDIR /opt/stactools-uci-cycling-races
 COPY --from=dependencies /opt/venv /opt/venv
@@ -51,7 +45,6 @@ FROM dev-dependencies as dev-builder
 
 ENV PATH="/opt/venv/bin:$PATH"
 WORKDIR /opt/stactools-uci-cycling-races
-COPY --from=base /opt/conda /opt/conda
 COPY --from=dependencies /opt/venv /opt/venv
 COPY . .
 CMD [ "stac", "ucicyclingraces" ]

@@ -1,10 +1,10 @@
 [project]
 name = "stactools-uci-cycling-races"
 version = "0.1.0"
-description = "PROVIDE DESCRIPTION HERE"
+description = "stactools package for World Tour Cycling races"
 readme = "README.md"
-authors = [{ name = "Your name here", email = "your-email@example.com" }]
-maintainers = [{ name = "Your name here", email = "your-email@example.com" }]
+authors = [{ name = "Sebastien Tremblay-Johnston", email = "yanns.tremblay@gmail.com" }]
+maintainers = [{ name = "Sebastien Tremblay-Johnston", email = "yanns.tremblay@gmail.com" }]
 keywords = ["stactools", "pystac", "catalog", "STAC"]
 license = { text = "Apache-2.0" }
 classifiers = [
@@ -13,13 +13,10 @@ classifiers = [
     "License :: OSI Approved :: Apache Software License",
     "Natural Language :: English",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
 ]
-requires-python = ">=3.8"
-dependencies = ["stactools>=0.4.0"]
+requires-python = ">=3.12"
+dependencies = ["stactools>=0.4.0", "fiona"]
 
 [project.optional-dependencies]
 dev = [
