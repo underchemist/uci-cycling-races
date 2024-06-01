@@ -1,19 +1,19 @@
-# stactools-ephemeral
+# stactools-uci-cycling-races
 
-[![PyPI](https://img.shields.io/pypi/v/stactools-ephemeral?style=for-the-badge)](https://pypi.org/project/stactools-ephemeral/)
-![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/stactools-packages/ephemeral/continuous-integration.yml?style=for-the-badge)
+[![PyPI](https://img.shields.io/pypi/v/stactools-uci-cycling-races?style=for-the-badge)](https://pypi.org/project/stactools-uci-cycling-races/)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/stactools-packages/uci-cycling-races/continuous-integration.yml?style=for-the-badge)
 
-- Name: ephemeral
-- Package: `stactools.ephemeral`
-- [stactools-ephemeral on PyPI](https://pypi.org/project/stactools-ephemeral/)
+- Name: uci-cycling-races
+- Package: `stactools.uci_cycling_races`
+- [stactools-uci-cycling-races on PyPI](https://pypi.org/project/stactools-uci-cycling-races/)
 - Owner: @githubusername
 - [Dataset homepage](http://example.com)
 - STAC extensions used:
   - [proj](https://github.com/stac-extensions/projection/)
 - Extra fields:
-  - `ephemeral:custom`: A custom attribute
-- [Browse the example in human-readable form](https://radiantearth.github.io/stac-browser/#/external/raw.githubusercontent.com/stactools-packages/ephemeral/main/examples/collection.json)
-- [Browse a notebook demonstrating the example item and collection](https://github.com/stactools-packages/ephemeral/tree/main/docs/example.ipynb)
+  - `uci-cycling-races:custom`: A custom attribute
+- [Browse the example in human-readable form](https://radiantearth.github.io/stac-browser/#/external/raw.githubusercontent.com/stactools-packages/uci-cycling-races/main/examples/collection.json)
+- [Browse a notebook demonstrating the example item and collection](https://github.com/stactools-packages/uci-cycling-races/tree/main/docs/example.ipynb)
 
 A short description of the package and its usage.
 
@@ -25,7 +25,7 @@ A short description of the package and its usage.
 ## Installation
 
 ```shell
-pip install stactools-ephemeral
+pip install stactools-uci-cycling-races
 ```
 
 ## Command-line usage
@@ -33,10 +33,10 @@ pip install stactools-ephemeral
 Description of the command line functions
 
 ```shell
-stac ephemeral create-item source destination
+stac uci-cycling-races create-item source destination
 ```
 
-Use `stac ephemeral --help` to see all subcommands and options.
+Use `stac uci-cycling-races --help` to see all subcommands and options.
 
 ## Contributing
 

@@ -1,4 +1,4 @@
-from stactools.ephemeral import stac
+from stactools.uci_cycling_races import stac
 
 from . import test_data
 
